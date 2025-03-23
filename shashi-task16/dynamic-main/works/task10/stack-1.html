@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Call Stack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #367c39;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        #processLine {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            background-color: #e9e9e9;
+        }
+
+        #process-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none; /* Remove bullet points */
+            display: inline; /* Display list items horizontally */
+        }
+        #process-list li {
+             display: inline;
+        }
+
+        #process-list li:not(:last-child)::after {
+            content: " → "; /* Add arrow between list items */
+            margin: 0 5px; /* Adjust spacing as needed */
+        }
+    </style>
+    <script>
+        let taskStack = [];
+
+        function addTask() {
+            let taskName = document.getElementById("taskName").value;
+            if (taskName.trim() !== "") {
+                taskStack.push(taskName);
+                updateProcessLine();
+                document.getElementById("taskName").value = ""; // Clear input
+            } else {
+                alert("Please enter a task name."); //basic error handling
+            }
+        }
+
+        function undoTask() {
+            if (taskStack.length > 0) {
+                taskStack.pop();
+                updateProcessLine();
+            } else {
+                alert("No tasks to undo.");
+            }
+        }
+
+        function updateProcessLine() {
+            let processList = document.getElementById("process-list");
+            processList.innerHTML = ""; // Clear first
+            for (let i = 0; i < taskStack.length; i++) {
+                let listItem = document.createElement("li");
+                listItem.textContent = taskStack[i];
+                processList.appendChild(listItem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Task Call Stack</h1>
+    <div>
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" placeholder="Enter task name" />
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="undoTask()">Undo Task</button>
+    </div>
+    <h3>Process Line:</h3>
+    <div id="processLine">
+        <ul id="process-list"></ul>
+    </div>
+</body>
+</html>

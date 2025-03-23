@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h3 {
+            color: #4CAF50;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            margin: 5px 0;
+            padding: 8px;
+            width: 48%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .search-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-container input {
+            padding: 8px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Enter details:</h3>
+
+        <div class="input-group">
+            <input placeholder="Name" id="name">
+            <input placeholder="DOB" id="DOB">
+        </div>
+
+        <div class="input-group">
+            <input placeholder="Age" id="Age">
+            <input placeholder="Height" id="height">
+        </div>
+
+        <div class="button-container">
+            <button onclick="addPersonalDetails()">Insert Info</button>
+            <button id="clearDisplayButton" onclick="clearDisplay()">Clear Display</button>
+            <button onclick="clearInputs()">Clear Inputs</button>
+            <button id="showButton" onclick="showDetails()" disabled>Show All Details</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchField" placeholder="Search by Name" onkeyup="searchDetails()">
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const personalDataArray = [];
+
+        function addPersonalDetails() {
+            const name = document.getElementById("name").value;
+            const DOB = document.getElementById("DOB").value;
+            const age = document.getElementById("Age").value;
+            const height = document.getElementById("height").value;
+
+            if (name && DOB && age && height) {
+                personalDataArray.push({ name, DOB, age, height });
+
+                // Enable "Show All Details" button
+                document.getElementById("showButton").disabled = false;
+
+                // Show the details immediately after adding data
+                showDetails();
+            } else {
+                document.getElementById("message").innerHTML = "Please fill all fields.";
+            }
+        }
+
+        function showDetails() {
+            let details = personalDataArray.map((p, i) =>
+                `Entry ${i + 1}: Name: ${p.name}, DOB: ${p.DOB}, Age: ${p.age}, Height: ${p.height}`).join("<br>");
+            document.getElementById("message").innerHTML = details || "No data available.";
+        }
+
+        function clearDisplay() {
+            document.getElementById("message").innerHTML = "";
+        }
+
+        function clearInputs() {
+            document.getElementById("name").value = "";
+            document.getElementById("DOB").value = "";
+            document.getElementById("Age").value = "";
+            document.getElementById("height").value = "";
+        }
+
+        function searchDetails() {
+            clearDisplay();
+            const searchTerm = document.getElementById("searchField").value.toLowerCase();
+            let filteredData = personalDataArray.filter(person =>
+                person.name.toLowerCase().includes(searchTerm));
+
+            let details = filteredData.map((p, i) =>
+                `Entry ${i + 1}: Name: ${p.name}, DOB: ${p.DOB}, Age: ${p.age}, Height: ${p.height}`).join("<br>");
+            document.getElementById("message").innerHTML = details || "No matching data found.";
+        }
+    </script>
+
+</body>
+
+</html>

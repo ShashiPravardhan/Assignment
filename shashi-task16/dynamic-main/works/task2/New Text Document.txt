@@ -1,0 +1,25 @@
+.header_div{
+    background-color: rgba(135, 139, 143, 0.301);
+    text-align: center;
+    }
+    .content_div{
+    background-color: rgb(223, 223, 247);
+    margin-top: 10px;
+    padding: 10px;
+    }
+ .btn_div{
+ margin-top: 10px;
+ }
+ .dashboard_content_div{
+    background-color: beige;
+    margin-top: 10px;
+    padding: 10px;
+    height: 300px;
+ }
+ #ref_btn{
+    width:300px;
+    font-size: 20px;
+ }
+ *{
+ }
+    text-align: center;

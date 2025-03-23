@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input placeholder="Enter The Number" id="num" onkeyup="change()">
+        <div id="demo_div">
+
+        </div>
+        <script>
+            function change()
+{
+
+           let text="";
+
+            let n =parseInt(document.getElementById("num").value);
+            for(let i=0;i<=n;i++){
+            for(let j=0;j<i;j++){
+        text+="*";
+    }
+    text +="<br>";
+}
+document.getElementById("demo_div").innerHTML=text;
+}
+        </script>
+    </body>
+</html>
