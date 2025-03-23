@@ -27,7 +27,6 @@
         let age = this.currentDate.getFullYear() - this.birthDate.getFullYear();
         let monthDifference = this.currentDate.getMonth() - this.birthDate.getMonth();
 
-        // If the current month is before the birth month, or it's the same month but the birthday hasn't passed yet
         if (monthDifference < 0 || (monthDifference === 0 && this.currentDate.getDate() < this.birthDate.getDate())) {
           age--;
         }
