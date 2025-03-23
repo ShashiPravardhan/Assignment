@@ -8,11 +8,11 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f0f0f0;
+            background-color: #e3f2fd;
         }
 
         h1 {
-            color: #333;
+            color: #0d47a1;
         }
 
         div {
@@ -24,18 +24,19 @@
             width: 100px;
             text-align: right;
             margin-right: 10px;
+            color: #1565c0;
         }
 
         input[type="text"] {
             width: 200px;
             padding: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #64b5f6;
             border-radius: 4px;
         }
 
         button {
             padding: 8px 16px;
-            background-color: #4CAF50;
+            background-color: #1976d2;
             color: white;
             border: none;
             border-radius: 4px;
@@ -43,35 +44,36 @@
         }
 
         button:hover {
-            background-color: #367c39;
+            background-color: #0d47a1;
         }
 
         h3 {
-            color: #333;
+            color: #0d47a1;
             margin-top: 20px;
         }
 
         #processLine {
-            border: 1px solid #ccc;
+            border: 1px solid #64b5f6;
             padding: 10px;
             margin-top: 10px;
             border-radius: 4px;
-            background-color: #e9e9e9;
+            background-color: #bbdefb;
         }
 
         #process-list {
             margin: 0;
             padding: 0;
-            list-style-type: none; /* Remove bullet points */
-            display: inline; /* Display list items horizontally */
+            list-style-type: none;
+            display: inline;
         }
         #process-list li {
              display: inline;
         }
 
         #process-list li:not(:last-child)::after {
-            content: " → "; /* Add arrow between list items */
-            margin: 0 5px; /* Adjust spacing as needed */
+            content: " → ";
+            margin: 0 5px;
+            color: #1e88e5;
         }
     </style>
     <script>
@@ -82,9 +84,9 @@
             if (taskName.trim() !== "") {
                 taskStack.push(taskName);
                 updateProcessLine();
-                document.getElementById("taskName").value = ""; // Clear input
+                document.getElementById("taskName").value = "";
             } else {
-                alert("Please enter a task name."); //basic error handling
+                alert("Please enter a task name.");
             }
         }
 
@@ -99,7 +101,7 @@
 
         function updateProcessLine() {
             let processList = document.getElementById("process-list");
-            processList.innerHTML = ""; // Clear first
+            processList.innerHTML = "";
             for (let i = 0; i < taskStack.length; i++) {
                 let listItem = document.createElement("li");
                 listItem.textContent = taskStack[i];
