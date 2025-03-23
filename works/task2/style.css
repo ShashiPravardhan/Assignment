@@ -1,25 +1,24 @@
 .header_div{
-   background-color: rgba(135, 139, 143, 0.301);
+   background-color: rgba(100, 149, 237, 0.301);
    text-align: center;
-   }
-   .content_div{
-   background-color: rgb(223, 223, 247);
+}
+.content_div{
+   background-color: rgb(200, 230, 201);
    margin-top: 10px;
    padding: 10px;
-   }
+}
 .btn_div{
-margin-top: 10px;
+   margin-top: 10px;
 }
 .dashboard_content_div{
-   background-color: beige;
+   background-color: lightgoldenrodyellow;
    margin-top: 10px;
    padding: 10px;
    height: 300px;
 }
 #ref_btn{
-   width:300px;
+   width: 300px;
    font-size: 20px;
 }
 *{
 }
-   text-align: center;
