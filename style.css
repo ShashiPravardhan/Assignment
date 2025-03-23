@@ -4,8 +4,8 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     text-align: center;
     animation: fadeIn 0.8s ease-in-out;
 }
@@ -17,11 +17,11 @@ html, body {
 
 h1 {
     padding: 20px;
-    background: linear-gradient(90deg, #2c3e50, #34495e);
+    background: linear-gradient(90deg, #4a5c35, #6d8f5f);
     color: white;
     margin: 0;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    border-bottom: 3px solid #e1b12c;
+    border-bottom: 3px solid #d4d4d4;
 }
 
 .scroll-container {
@@ -30,8 +30,8 @@ h1 {
     justify-content: center;
     position: relative;
     padding: 10px 0;
-    background: rgba(44, 62, 80, 0.9);
-    border-bottom: 3px solid #e1b12c;
+    background: #ffffff;
+    border-bottom: 3px solid #d4d4d4;
 }
 
 .scrollmenu {
@@ -53,27 +53,27 @@ nav a {
     text-decoration: none;
     padding: 12px 20px;
     margin: 5px;
-    background: linear-gradient(90deg, #e1b12c, #f39c12);
+    background: linear-gradient(90deg, #2f4858, #1e6b8e);
     border-radius: 6px;
-    font-weight: 500;
+    font-weight: 300;
     transition: all 0.3s ease-in-out;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a:hover {
-    background: linear-gradient(90deg, #c0392b, #8e44ad);
+    background: linear-gradient(90deg, #4a5c35, #6d8f5f);
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link.active {
-    background: #34495e;
+    background: #3c5a14;
     font-weight: bold;
     transform: scale(1.1);
 }
 
 .scroll-btn {
-    background: #c0392b;
+    background: #2f4858;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -86,7 +86,7 @@ nav a:hover {
 }
 
 .scroll-btn:hover {
-    background: #e1b12c;
+    background: #1e6b8e;
     transform: scale(1.1);
 }
 
@@ -128,12 +128,12 @@ nav::-webkit-scrollbar {
 }
 
 nav::-webkit-scrollbar-thumb {
-    background: #555;
+    background: #4a5c35;
     border-radius: 10px;
 }
 
 nav::-webkit-scrollbar-track {
-    background: #222;
+    background: #d4d4d4;
 }
 
 @media (max-width: 768px) {
