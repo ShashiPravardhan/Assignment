@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: #f9fafb;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            #container {
+                padding: 24px;
+                margin: 20px;
+                border: 1px solid #e0e0e0; 
+                border-radius: 12px; 
+                background-color: #ffffff; 
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); 
+                width: 380px;
+                text-align: center;
+            }
+
+            .input_div {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch; 
+            }
+
+            input {
+                width: 100%; 
+                padding: 12px;
+                font-size: 20px;
+                margin-bottom: 12px;
+                border: 1px solid #d1d5db; 
+                border-radius: 6px; 
+                box-sizing: border-box; 
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            input:focus {
+                outline: none;
+                border-color: #3b82f6; 
+                box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); 
+            }
+
+            input:disabled {
+                background-color: #f3f4f6; 
+                color: #6b7280; 
+                cursor: not-allowed;
+            }
+
+            .button_div {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            button {
+                width: 100%; 
+                padding: 12px 24px;
+                font-size: 20px;
+                border: none;
+                border-radius: 6px; 
+                background-color: #32CD32; 
+                color: #ffffff;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            button:active {
+                background-color: #388e3c;
+                transform: translateY(1px);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+            }
+        </style>
+        <script>
+            function ad() {
+                x = parseInt(document.getElementById("num1").value);
+                y = parseInt(document.getElementById("num2").value);
+                result = x + y;
+                document.getElementById("res").value = result;
+            }
+            function sub() {
+                x = parseInt(document.getElementById("num1").value);
+                y = parseInt(document.getElementById("num2").value);
+                result = x - y;
+                document.getElementById("res").value = result;
+            }
+            function mul() {
+                x = parseInt(document.getElementById("num1").value);
+                y = parseInt(document.getElementById("num2").value);
+                result = x * y;
+                document.getElementById("res").value = result;
+            }
+            function div() {
+                x = parseInt(document.getElementById("num1").value);
+                y = parseInt(document.getElementById("num2").value);
+                result = x / y;
+                document.getElementById("res").value = result;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="input_div">
+                <input placeholder="Enter the value of X" id="num1" />
+                <input placeholder="Enter the value of Y" id="num2" />
+                <input placeholder="Result will appear here" id="res" disabled />
+            </div>
+            <div class="button_div">
+                <button onclick="ad()">Addition (X + Y)</button>
+                <button onclick="sub()">Subtraction (X - Y)</button>
+                <button onclick="mul()">Multiplication (X * Y)</button>
+                <button onclick="div()">Division (X / Y)</button>
+            </div>
+        </div>
+    </body>
+</html>

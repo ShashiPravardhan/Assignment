@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+</head>
+<body>
+
+  <h2>Age Calculator</h2>
+  <form id="ageForm">
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate" required>
+    <button type="submit">Calculate Age</button>
+  </form>
+
+  <h3 id="result"></h3>
+
+  <script>
+    class AgeCalculator {
+      constructor(birthDate) {
+        this.birthDate = new Date(birthDate);
+        this.currentDate = new Date();
+      }
+
+      calculateAge() {
+        let age = this.currentDate.getFullYear() - this.birthDate.getFullYear();
+        let monthDifference = this.currentDate.getMonth() - this.birthDate.getMonth();
+
+        // If the current month is before the birth month, or it's the same month but the birthday hasn't passed yet
+        if (monthDifference < 0 || (monthDifference === 0 && this.currentDate.getDate() < this.birthDate.getDate())) {
+          age--;
+        }
+
+        return age;
+      }
+    }
+
+    document.getElementById('ageForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const birthdate = document.getElementById('birthdate').value;
+      if (birthdate) {
+        const ageCalculator = new AgeCalculator(birthdate);
+        const age = ageCalculator.calculateAge();
+        document.getElementById('result').textContent = `You are ${age} years old.`;
+      }
+    });
+  </script>
+
+</body>
+</html>

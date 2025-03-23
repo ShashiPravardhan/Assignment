@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f4f4f4;
+                color: #333;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h3 {
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            input {
+                padding: 10px;
+                margin: 5px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                width: 300px;
+                max-width: 100%;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            input:focus {
+                outline: none;
+                border-color: #3498db;
+                box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+            }
+
+            button {
+                padding: 10px 20px;
+                margin: 10px 5px;
+                background-color: #3498db;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #217dbb;
+            }
+
+            button:disabled {
+                background-color: #bdc3c7;
+                cursor: not-allowed;
+            }
+
+            #message {
+                margin-top: 20px;
+                font-size: 18px;
+                color: #2c3e50;
+                padding: 10px;
+                background-color: #e0f7fa;
+                border-radius: 5px;
+                border: 1px solid #b2ebf2;
+                text-align: center;
+                width: 80%;
+                max-width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Enter details:</h3>
+        <input placeholder="Name" id="name">
+        <input placeholder="DOB" id="DOB">
+        <input placeholder="Age" id="Age">
+        <input placeholder="Height" id="height">
+        
+        <button onclick="addPersonalDetails()">Insert info</button>
+        <button id="showButton" onclick="showDetails()" disabled>Show Details</button>
+
+        <p id="message"></p>
+        <script>
+            const personalDataArray = [];
+
+            function addPersonalDetails() {
+                const name = document.getElementById("name").value;
+                const DOB = document.getElementById("DOB").value;
+                const age = document.getElementById("Age").value;
+                const height = document.getElementById("height").value;
+
+                if (name && DOB && age && height) {
+                    personalDataArray.push({ name, DOB, age, height });
+                    document.getElementById("showButton").disabled = false;
+                    document.getElementById("message").innerHTML = "Info added. Click 'Show Details' to view.";
+                } else {
+                    document.getElementById("message").innerHTML = "Please fill all fields.";
+                }
+            }
+
+            function showDetails() {
+                let details = personalDataArray.map((p, i) =>
+                    `Entry ${i + 1}: Name: ${p.name}, DOB: ${p.DOB}, Age: ${p.age}, Height: ${p.height}`).join("<br>");
+                document.getElementById("message").innerHTML = details || "No data available.";
+            }
+        </script>
+    </body>
+</html>
