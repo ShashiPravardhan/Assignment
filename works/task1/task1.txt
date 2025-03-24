@@ -1,0 +1,7 @@
+Frontend web development plays an important role in creating and development of applications and websites.  As technology is evolving, there is a big need for people to create technologies. I want to learn frontend development because I enjoy creating and developing websites and making them easy for users to interact with. The thought and idea of development and creating websites into working excites me. During my academics, I have found a keen interest towards HTML, CSS and JavaScript. So, I learned these technologies. I'm excited to learn advanced topics of these technologies by taking this course.
+
+2. By the end of this course, I want to learn all the advanced and key topics of Frontend Development and improve my knowledge in its fields. So, that it will help me in future for creating and developing the websites. 
+
+3. I aim to become a frontend developer in future. So, taking this course will help me to work seamlessly and build modern websites with the latest trends and technologies. It will also improve my chances of securing a good job.
+
+4. I want to learn React. I want to understand and learn the core concepts of React. I have never learnt the core concepts of React previously, like states and props. By learning this I can understand how to build dynamic user interface elements. Overall, by the end of this course, I want to confidently build modern and functional web applications.
