@@ -4,7 +4,7 @@ const works = {
     "task3": { "title": "Project 3", "url": "works/task3/demo.html" },
     "task4": { "title": "Project 4", "url": "works/task4/shashi.html" },
     "task5": { "title": "Project 5", "url": "works/task5/html.html" },
-    "task6": { "title": "Project 6", "url": "task6/html.html" },
+    "task6": { "title": "Project 6", "url": "works/task6/rep.html" },
     "task7": { "title": "Project 7", "url": "works/task7/calu.html" },
     "task8": { "title": "Project 8", "url": "works/task8/shashi-1.html" },
     "task9": { "title": "Project 9", "url": "works/task9/new.html" },
@@ -17,7 +17,7 @@ const works = {
     "task14a": { "title": "Project 14a", "url": "works/task14/object-1-1.html" },
     "task15": { "title": "Project 15", "url": "works/task15/new-1.html" },
     "task15a": { "title": "Project 15a", "url": "works/task15/Untitled-1.html" },
-    "task15b": { "title": "Project 15b", "url": "works/task15/15b/bulb.html" },
+    "task15b": { "title": "Project 15b", "url": "works/task15b/bulb.html" },
     "task16": { "title": "Project 16", "url": "works/task16/index.html" },
 };
 
