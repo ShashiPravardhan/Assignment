@@ -11,9 +11,14 @@ const works = {
     "task10": { "title": "Project 10", "url": "works/task10/stack-1.html" },
     "task11": { "title": "Project 11", "url": "works/task11/script.html" },
     "task12": { "title": "Project 12", "url": "works/task12/script-1.html" },
+    "task12a": { "title": "Project 12a", "url": "works/task12/demo (2).html" },
     "task13": { "title": "Project 13", "url": "works/task13/objects.html" },
     "task14": { "title": "Project 14", "url": "works/task14/math.html" },
+    "task14a": { "title": "Project 14a", "url": "works/task14/object-1-1.html" },
     "task15": { "title": "Project 15", "url": "works/task15/new-1.html" },
+    "task15a": { "title": "Project 15a", "url": "works/task15/Untitled-1.html" },
+    "task15b": { "title": "Project 15b", "url": "works/task15/b/bulb.html" },
+    "task16": { "title": "Project 16", "url": "works/task16/index.html" },
 };
 
 function createNav() {
